@@ -25,6 +25,7 @@ selected_score = st.sidebar.selectbox('Select your option', option)
 
 # streamlitでテキストを入力
 name = st.text_input('ニックネームを入力してください。')
+group_name = st.text_input('グループ名を入力してください。')
 
 # streamlitでファイルをアップロード
 uploaded_file = st.file_uploader("CSV ファイルをアップロードしてください。", type="csv")
@@ -48,6 +49,7 @@ if st.button('評価') and uploaded_file is not None:
     # 表示オプションを変更
 
     df_score = pd.DataFrame({'Name': [name],
+                            'Group': [group_name],
                             'Accuracy': [score_acc],
                             'Recall': [score_rec],
                             'Precision': [score_pre],
