@@ -24,7 +24,7 @@ selected_score = st.sidebar.selectbox('Select your option', option)
 
 
 # streamlitでテキストを入力
-name = st.text_input('名前を入力してください。')
+name = st.text_input('ニックネームを入力してください。')
 
 # streamlitでファイルをアップロード
 uploaded_file = st.file_uploader("CSV ファイルをアップロードしてください。", type="csv")
