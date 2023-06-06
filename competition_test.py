@@ -15,7 +15,7 @@ colunm_name = 'Survived'
 # result 列のfailを0、successを1に変換
 # bank_test[colunm_name] = bank_test[colunm_name].map({'fail': 0, 'success': 1})
 
-st.title('test.csv ファイルに対する評価')
+st.title('test.csv に対する Leaderboard')
 ranking_df = pd.read_csv('ranking.csv')
 
 st.sidebar.title('評価指標')
@@ -27,7 +27,7 @@ selected_score = st.sidebar.selectbox('Select your option', option)
 name = st.text_input('名前を入力してください。')
 
 # streamlitでファイルをアップロード
-uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+uploaded_file = st.file_uploader("CSV ファイルをアップロードしてください。", type="csv")
 
 # アップロードしたファイルを読み込み
 if st.button('評価') and uploaded_file is not None:
