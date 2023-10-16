@@ -14,7 +14,7 @@ bank_test = pd.read_csv('submission_answer.csv')
 # 目的変数の変数名
 colunm_name = 'Survived'
 # result 列のfailを0、successを1に変換
-bank_test[colunm_name] = bank_test[colunm_name].map({'fail': 0, 'success': 1})
+# bank_test[colunm_name] = bank_test[colunm_name].map({'fail': 0, 'success': 1})
 
 st.title('Titanic Competition')
 ranking_df = pd.read_csv('ranking.csv')
