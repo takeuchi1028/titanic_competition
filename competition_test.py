@@ -81,17 +81,17 @@ except:
 
 st.sidebar.download_button('csvファイルを出力', ranking_df.to_csv(index=False), 'ranking.csv')
 
-st.sidebar.write('ランキングボードの結果を削除する場合')
-cleared_num = st.sidebar.number_input('消去するインデックスを入力', min_value=0)
-if st.sidebar.button('消去'):
-    ranking_df = ranking_df.drop(index=cleared_num)
-    ranking_df.to_csv('ranking.csv', index=False)
+# st.sidebar.write('ランキングボードの結果を削除する場合')
+# cleared_num = st.sidebar.number_input('消去するインデックスを入力', min_value=0)
+# if st.sidebar.button('消去'):
+#     ranking_df = ranking_df.drop(index=cleared_num)
+#     ranking_df.to_csv('ranking.csv', index=False)
 
-ranking_df = ranking_df.sort_values(selected_score, ascending=False)
-rank = ranking_df[selected_score].rank(method='min', ascending=False).astype(int)
-ranking_df.insert(0, 'Rank', rank)
-ranking_df = ranking_df.sort_values('Rank', ascending=True)
-ranking_df = ranking_df.reset_index(drop=True)
+# ranking_df = ranking_df.sort_values(selected_score, ascending=False)
+# rank = ranking_df[selected_score].rank(method='min', ascending=False).astype(int)
+# ranking_df.insert(0, 'Rank', rank)
+# ranking_df = ranking_df.sort_values('Rank', ascending=True)
+# ranking_df = ranking_df.reset_index(drop=True)
 
 st.subheader('ランキングボード')
 st.table(ranking_df)
