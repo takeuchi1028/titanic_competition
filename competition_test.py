@@ -87,11 +87,11 @@ st.sidebar.download_button('csvファイルを出力', ranking_df.to_csv(index=F
 #     ranking_df = ranking_df.drop(index=cleared_num)
 #     ranking_df.to_csv('ranking.csv', index=False)
 
-# ranking_df = ranking_df.sort_values(selected_score, ascending=False)
-# rank = ranking_df[selected_score].rank(method='min', ascending=False).astype(int)
-# ranking_df.insert(0, 'Rank', rank)
-# ranking_df = ranking_df.sort_values('Rank', ascending=True)
-# ranking_df = ranking_df.reset_index(drop=True)
+ranking_df = ranking_df.sort_values(selected_score, ascending=False)
+rank = ranking_df[selected_score].rank(method='min', ascending=False).astype(int)
+ranking_df.insert(0, 'Rank', rank)
+ranking_df = ranking_df.sort_values('Rank', ascending=True)
+ranking_df = ranking_df.reset_index(drop=True)
 
 st.subheader('ランキングボード')
 st.table(ranking_df)
